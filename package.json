@@ -2,7 +2,7 @@
   "name": "do2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mtc98.github.io/chat1",
+  "homepage": "https://mtc98.dpdns.org",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
