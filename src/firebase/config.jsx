@@ -1,26 +1,25 @@
+// src/firebase/config.js
+
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/auth'
 import 'firebase/storage'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDSKgUwZ5b8ZNM_3MX36XOSwMi6IuXQGm8",
-  authDomain: "mtc9820201216.firebaseapp.com",
-  projectId: "mtc9820201216",
-  storageBucket: "mtc9820201216.appspot.com",
-  messagingSenderId: "356765302606",
-  appId: "1:356765302606:web:22142c8f99b9abd6aea81f"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 }
 
 // init firebase
-firebase.initializeApp(firebaseConfig)
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig)
+}
 
-// init services
-const projectFirestore = firebase.firestore()
-const projectAuth = firebase.auth()
-const projectStorage = firebase.storage()
 // timestamp
 const timestamp = firebase.firestore.Timestamp
 
-
-export { projectFirestore, projectAuth, timestamp, projectStorage }
+export { firebase, timestamp }

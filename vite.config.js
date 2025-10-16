@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   // 這裡是最關鍵的設定！
-  base: '/'
+  base: '/chat1/'
 })

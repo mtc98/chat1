@@ -1,16 +1,17 @@
 // 建立範例 userdojo 和 projects 完整資料的腳本
+require('dotenv').config(); // 讀取 .env 檔案
 const firebase = require('firebase/app');
 require('firebase/firestore');
 require('firebase/auth');
 require('firebase/storage');
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDSKgUwZ5b8ZNM_3MX36XOSwMi6IuXQGm8",
-  authDomain: "mtc9820201216.firebaseapp.com",
-  projectId: "mtc9820201216",
-  storageBucket: "mtc9820201216.appspot.com",
-  messagingSenderId: "356765302606",
-  appId: "1:356765302606:web:22142c8f99b9abd6aea81f"
+  apiKey: process.env.VITE_FIREBASE_API_KEY,
+  authDomain: process.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.VITE_FIREBASE_APP_ID
 };
 
 // 初始化 Firebase
